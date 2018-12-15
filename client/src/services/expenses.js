@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 export function getExpenses() {
-    return axios.get('http://localhost:3000/');
+    return axios.get('http://localhost:3000/expenses');
 }
 
 export function getExpense() {

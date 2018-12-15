@@ -73,12 +73,6 @@
             </v-form>
           </v-card-text>
 
-          <!-- TODO: Remover essa div / v-for -->
-          <!--
-          <div v-for="(elem, idx) in data" v-bind:key="idx">
-            {{idx}}: {{elem}} <br>
-          </div>
-          -->
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn v-bind:disabled="saving" color="primary" v-on:click="validateBeforeSubmit()">Save</v-btn>
@@ -91,7 +85,7 @@
 </template>
 
 <script>
-import { saveExpense } from '@/services/expenses';
+import { getExpenses, saveExpense } from '@/services/expenses';
 
 export default {
   name: 'AddExpense',
@@ -113,6 +107,9 @@ export default {
     };
   },
   methods: {
+    get() {
+      getExpenses();
+    },
     validateBeforeSubmit() {
       this.saving = true;
       this.submit();

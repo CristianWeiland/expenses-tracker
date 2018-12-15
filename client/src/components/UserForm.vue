@@ -43,7 +43,7 @@
   </v-container>
 </template>
 
-<<script>
+<script>
 export default {
   name: 'UserForm',
   data() {
